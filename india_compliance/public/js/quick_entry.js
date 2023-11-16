@@ -56,6 +56,7 @@ class GSTQuickEntryForm extends frappe.ui.form.QuickEntryForm {
                 fieldname: "state",
                 fieldtype: "Autocomplete",
                 ignore_validation: true,
+                default:"Tamil Nadu",
             },
             {
                 fieldname: "country",
@@ -134,8 +135,8 @@ class PartyQuickEntryForm extends GSTQuickEntryForm {
         super.render_dialog();
     }
 
-    get_contact_fields() {
-        return [
+    get_contact_fields(doctype) {
+        const fields = [
             {
                 label: __("Primary Contact Details"),
                 fieldname: "primary_contact_section",
@@ -151,12 +152,17 @@ class PartyQuickEntryForm extends GSTQuickEntryForm {
             {
                 fieldtype: "Column Break",
             },
-            {
+        ];
+    
+        if (this.doctype != "Customer") {
+            fields.push({
                 label: __("Mobile Number"),
                 fieldname: "_mobile_no",
                 fieldtype: "Data",
-            },
-        ];
+            });
+        }
+    
+        return fields;
     }
 
     update_doc() {

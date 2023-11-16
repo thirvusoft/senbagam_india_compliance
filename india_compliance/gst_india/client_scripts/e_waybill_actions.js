@@ -33,22 +33,22 @@ function setup_e_waybill_actions(doctype) {
 
             if (!frm.doc.ewaybill) {
                 if (frappe.perm.has_perm(frm.doctype, 0, "submit", frm.doc.name)) {
-                    frm.add_custom_button(
-                        __("Generate"),
-                        () => show_generate_e_waybill_dialog(frm),
-                        "e-Waybill"
-                    );
+                    // frm.add_custom_button(
+                    //     __("Generate"),
+                    //     () => show_generate_e_waybill_dialog(frm),
+                    //     "e-Waybill"
+                    // );
 
-                    frm.add_custom_button(
-                        __("Fetch if Generated"),
-                        () => show_fetch_if_generated_dialog(frm),
-                        "e-Waybill"
-                    );
-                    frm.add_custom_button(
-                        __("Mark as Generated"),
-                        () => show_mark_e_waybill_as_generated_dialog(frm),
-                        "e-Waybill"
-                    );
+                    // frm.add_custom_button(
+                    //     __("Fetch if Generated"),
+                    //     () => show_fetch_if_generated_dialog(frm),
+                    //     "e-Waybill"
+                    // );
+                    // frm.add_custom_button(
+                    //     __("Mark as Generated"),
+                    //     () => show_mark_e_waybill_as_generated_dialog(frm),
+                    //     "e-Waybill"
+                    // );
                 }
 
                 if (frm.doc.e_waybill_status === "Pending") {

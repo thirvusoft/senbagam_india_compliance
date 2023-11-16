@@ -15,9 +15,9 @@ def validate(doc, method=None):
     if doc.account not in gst_accounts:
         return
 
-    frappe.throw(
-        _("Company GSTIN is a mandatory field for accounting of GST Accounts.")
-    )
+    # frappe.throw(
+    #     _("Company GSTIN is a mandatory field for accounting of GST Accounts.")
+    # )
 
 
 def update_gl_dict_with_regional_fields(doc, gl_dict):

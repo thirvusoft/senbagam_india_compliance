@@ -272,15 +272,15 @@ def validate_gst_accounts(doc, is_sales_transaction=False):
                 ).format(idx)
             )
 
-        if not doc.supplier_gstin and (
-            idx := _get_matched_idx(rows_to_validate, all_valid_accounts)
-        ):
-            _throw(
-                _(
-                    "Cannot charge GST in Row #{0} since purchase is from a Supplier"
-                    " without GSTIN"
-                ).format(idx)
-            )
+        # if not doc.supplier_gstin and (
+        #     idx := _get_matched_idx(rows_to_validate, all_valid_accounts)
+        # ):
+        #     _throw(
+        #         _(
+        #             "Cannot charge GST in Row #{0} since purchase is from a Supplier"
+        #             " without GSTIN"
+        #         ).format(idx)
+        #     )
 
     is_inter_state = is_inter_state_supply(doc)
     previous_row_references = set()
